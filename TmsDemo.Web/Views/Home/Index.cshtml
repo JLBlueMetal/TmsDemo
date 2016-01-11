@@ -1,32 +1,60 @@
 ﻿@{
     ViewBag.Title = "TMS";
 }
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
+@*Angular Library*@
+@*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>*@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#btnDashboard").click(function(){
+        $("#divDevices").hide(1000);
+        $("#divDevices").removeClass("show");
+        $("#divDevices").addClass("hide");
+        $("#divDashboard").show(1000);
+    });
+    $("#btnDevices").click(function () {
+        $("#divDashboard").hide(1000);
+        $("#divDevices").show(1000);
+        $("#divDevices").removeClass("hide");
+        $("#divDevices").addClass("show");
+    });
+});
+</script>
 <p></p>
 <div class="row" ng-app="">
     <div class="col-md-4">
        
         <p>
-            <button ng-click="dash = false" class="btn btn-primary">
+            @*Commented code is the angular version*@
+            @*<button ng-click="dash = false" class="btn btn-primary">*@
+            <button class="btn btn-primary" id="btnDashboard">
                 Dashboard
             </button>
-        </p>
+</p>
         <p>
-            <button ng-click="dash = true" class="btn btn-primary">
+            @*Commented code is the angular version*@
+            @*<button ng-click="dash = true" class="btn btn-primary">*@
+            <button class="btn btn-primary" id="btnDevices">
                 Devices
             </button>
         </p>
     </div>
     <div class="col-md-8">
-        @*Content*@
+        
         <div>
-
-            <div id="divDashboard" ng-hide="dash">
-                dasboard
+            @*Commented code is the angular version*@
+            @*<div id="divDashboard" ng-hide="dash">*@
+            <div id="divDashboard" >
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=9+Galen+St,Watertown,MA&zoom=16&size=800x800&key=AIzaSyDFT2vE9vv6Jl_4zG69vghiVnq8T4r6fxY" />
             </div>
-            <div id="divDevices" ng-show="dash">
-                devices
+
+            @*Commented code is the angular version*@
+            @*<div id="divDevices" ng-show="dash">*@
+            <div id="divDevices" class="hide">
+                Devices grid goes here
+
             </div>
 
         </div>
