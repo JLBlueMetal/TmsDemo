@@ -26,7 +26,6 @@ namespace TmsDemo.Data.Entities
 
         public Device()
         {
-            string s = "";
 
         }
     }

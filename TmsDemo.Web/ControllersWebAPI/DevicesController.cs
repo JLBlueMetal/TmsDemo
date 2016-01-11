@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using TmsDemo.Data;
+using TmsDemo.Data.Entities;
 
 namespace TmsDemo.Web.ControllersWebAPI
 {
@@ -16,7 +16,7 @@ namespace TmsDemo.Web.ControllersWebAPI
         {
             return new string[] { "value1", "value2" };
         }
-
+        
         // GET: api/Devices/5
         public string Get(int id)
         {

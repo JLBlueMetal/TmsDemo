@@ -191,6 +191,7 @@
     <ProjectReference Include="..\TmsDemo.Data\TmsDemo.Data.csproj">
       <Project>{d987d6fa-528f-4708-b219-09c0349040a9}</Project>
       <Name>TmsDemo.Data</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
