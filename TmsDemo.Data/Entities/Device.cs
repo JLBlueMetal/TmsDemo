@@ -23,10 +23,24 @@ namespace TmsDemo.Data.Entities
         //Amount of cars needed to raise a "traffic" flag
         public int Threshold { get; set; }
 
-
+        //Base constructor
         public Device()
-        {
+        { }
 
+        public Device(int id, string lat, string lon)
+        {
+            this.Id = id;
+            this.Latitude = lat;
+            this.Longitude = lon;
+        }
+
+        public Device(int id, string lat, string lon, int duration, int threshold)
+        {
+            this.Id = id;
+            this.Latitude = lat;
+            this.Longitude = lon;
+            this.Duration = duration;
+            this.Threshold = threshold;
         }
     }
 }

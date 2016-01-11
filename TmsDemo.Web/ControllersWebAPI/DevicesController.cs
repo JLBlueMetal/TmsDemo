@@ -10,17 +10,18 @@ namespace TmsDemo.Web.ControllersWebAPI
 {
     public class DevicesController : ApiController
     {
-        
-        // GET: api/Devices
-        public IEnumerable<string> Get()
+       private Device[] DeviceList =  new Device[] { new Device(1,"",""), new Device(2,"","")};
+
+    // GET: api/Devices
+    public IEnumerable<Device> Get()
         {
-            return new string[] { "value1", "value2" };
+            return DeviceList;
         }
         
         // GET: api/Devices/5
-        public string Get(int id)
+        public Device Get(int id)
         {
-            return "value";
+            return DeviceList[id];
         }
 
         // POST: api/Devices
