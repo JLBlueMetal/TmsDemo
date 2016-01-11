@@ -130,7 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="ControllersWebAPI\DevicesController.cs" />
+    <Compile Include="fonts\DevicesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ControllersWebAPI\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -191,7 +192,7 @@
     <ProjectReference Include="..\TmsDemo.Data\TmsDemo.Data.csproj">
       <Project>{d987d6fa-528f-4708-b219-09c0349040a9}</Project>
       <Name>TmsDemo.Data</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
