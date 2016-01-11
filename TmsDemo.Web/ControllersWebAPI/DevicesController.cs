@@ -10,6 +10,7 @@ namespace TmsDemo.Web.ControllersWebAPI
 {
     public class DevicesController : ApiController
     {
+        
         // GET: api/Devices
         public IEnumerable<string> Get()
         {
