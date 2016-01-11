@@ -10,6 +10,7 @@ namespace TmsDemo.Web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Title = "no page";
             return View();
         }
 
