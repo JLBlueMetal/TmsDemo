@@ -4,15 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace TmsDemo.Web.Controllers0
+namespace TmsDemo.Web.Controllers
 {
-    public class HomeController : Controller
+    public class DevicesController : Controller
     {
+        // GET: Devices
         public ActionResult Index()
         {
             ViewBag.Title = "no page";
             return View();
         }
-
     }
 }
