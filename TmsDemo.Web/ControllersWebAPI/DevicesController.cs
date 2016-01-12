@@ -10,12 +10,13 @@ namespace TmsDemo.Web.ControllersWebAPI
 {
     public class DevicesController : ApiController
     {
-       private readonly Device[] _deviceList =  new Device[] { new Device(1,"",""), new Device(2,"","")};
+       private readonly Device[] _deviceList =  new Device[] { new Device(1, "42.366096", "-71.185290", 10, 12), new Device(2, "42.365533", "-71.184804", 30, 48), new Device(3, "42.365212", "-71.184292", 45,782) };
 
     // GET: api/Devices
-    public IEnumerable<Device> Get()
+    public Object Get()
         {
-            return _deviceList;
+            return new { Data = _deviceList };
+            //return _deviceList;
         }
         
         // GET: api/Devices/5

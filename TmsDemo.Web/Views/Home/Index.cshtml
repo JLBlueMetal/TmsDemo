@@ -8,18 +8,21 @@
 
 <script>
 $(document).ready(function(){
-    //$("#btnDashboard").click(function(){
-    //    $("#divDevices").hide(1000);
-    //    $("#divDevices").removeClass("show");
-    //    $("#divDevices").addClass("hide");
-    //    $("#divDashboard").show(1000);
+
+    var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=9+Galen+St,Watertown,MA&zoom=16&size=800x800";
+    var apiKey = "&key=AIzaSyDFT2vE9vv6Jl_4zG69vghiVnq8T4r6fxY";
+    var deviceCoordinates = "";
+
+    //$.getJSON("api/Devices", function (result) {
+    //    $.each(result, function (i, field) {
+    //        $("#results").append($.param(field) + " ");
+    //    });
     //});
-    //$("#btnDevices").click(function () {
-    //    $("#divDashboard").hide(1000);
-    //    $("#divDevices").show(1000);
-    //    $("#divDevices").removeClass("hide");
-    //    $("#divDevices").addClass("show");
-    //});
+
+    var imgUrl = baseUrl + deviceCoordinates + apiKey;
+
+    $('#staticMap').attr("src", imgUrl);
+
 });
 </script>
 <p></p>
@@ -31,7 +34,7 @@ $(document).ready(function(){
         
         <div>
             <div id="divDashboard" >
-                <img src="https://maps.googleapis.com/maps/api/staticmap?center=9+Galen+St,Watertown,MA&zoom=16&size=800x800&key=AIzaSyDFT2vE9vv6Jl_4zG69vghiVnq8T4r6fxY" />
+                <img id="staticMap" />
             </div>
 
         </div>

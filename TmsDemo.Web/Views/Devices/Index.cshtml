@@ -2,40 +2,44 @@
     ViewBag.Title = "TMS";
 }
 
-@*Angular Library*@
-@*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>*@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link rel="stylesheet" href="~/Content/datatable.css" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 
 <script>
-//$(document).ready(function(){
-//    $("#btnDashboard").click(function(){
-//        $("#divDevices").hide(1000);
-//        $("#divDevices").removeClass("show");
-//        $("#divDevices").addClass("hide");
-//        $("#divDashboard").show(1000);
-//    });
-//    $("#btnDevices").click(function () {
-//        $("#divDashboard").hide(1000);
-//        $("#divDevices").show(1000);
-//        $("#divDevices").removeClass("hide");
-//        $("#divDevices").addClass("show");
-//    });
-//});
+    $(document).ready(function () {
+        
+        $("#tblDevices").DataTable({
+            ajax: "api/Devices",
+            columns: [
+                {"data": "id"},
+                {"data": "latitude"},
+                {"data": "longitude"},
+                {"data": "duration"},
+                {"data": "threshold"}
+            ]
+        });
+    });
 </script>
 <p></p>
-<div class="row" ng-app="">
+<div class="row" >
     
     <div class="col-md-8">
         
-        <div>
-            
-            <div id="divDevices">
-                Devices grid goes here
+        <table id="tblDevices" width="50%" align="center" class="display">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Duration</th>
+                    <th>Threshold</th>
+                </tr>
+            </thead>
+        </table>
 
-            </div>
+        <div id="results">
 
         </div>
-        
-
     </div>
 </div>
