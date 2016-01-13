@@ -12,16 +12,17 @@ $(document).ready(function(){
     var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=9+Galen+St,Watertown,MA&zoom=16&size=800x800";
     var apiKey = "&key=AIzaSyDFT2vE9vv6Jl_4zG69vghiVnq8T4r6fxY";
     var deviceCoordinates = "";
+    
+    $.getJSON('api/Devices', function (data) {
+        $.each(data, function (i) {
+            $.each(data.data, function (j) {
+                deviceCoordinates += '&markers=' + data[i][j].latitude + ',' + data[i][j].longitude;
+            });
+        });
 
-    //$.getJSON("api/Devices", function (result) {
-    //    $.each(result, function (i, field) {
-    //        $("#results").append($.param(field) + " ");
-    //    });
-    //});
-
-    var imgUrl = baseUrl + deviceCoordinates + apiKey;
-
-    $('#staticMap').attr("src", imgUrl);
+        var imgUrl = baseUrl + deviceCoordinates + apiKey;
+        $('#staticMap').attr("src", imgUrl);
+    });
 
 });
 </script>
@@ -36,10 +37,7 @@ $(document).ready(function(){
             <div id="divDashboard" >
                 <img id="staticMap" />
             </div>
-
         </div>
-        
-
     </div>
     <div class="col-md-2">
 
