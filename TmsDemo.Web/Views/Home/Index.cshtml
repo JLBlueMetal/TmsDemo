@@ -9,17 +9,69 @@
 <script>
 $(document).ready(function(){
 
-    var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=9+Galen+St,Watertown,MA&zoom=16&size=400x400&scale=2";
+    var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=9+Galen+St,Watertown,MA&zoom=17&size=900x900&scale=1";
     var apiKey = "&key=AIzaSyDFT2vE9vv6Jl_4zG69vghiVnq8T4r6fxY";
     var deviceCoordinates = "";
+
+    //stand in for icon implementation
+    var color = "";
+
+    //variables for icon implementation
+    var icon = "";
+
+    //marker icons
+    var light = "http://i.imgur.com/Nfnq88r.png";
+    var medium = "http://i.imgur.com/n06tE3g.png";
+    var heavy = "http://i.imgur.com/NgrBSXL.png";
+
+    //circle icons
+    //var light = "http://i.imgur.com/MDQilak.png";
+    //var medium = "http://i.imgur.com/RgKouCo.png";
+    //var heavy = "http://i.imgur.com/gUi6GB4.png";
     
+    //Icon implementation
     $.getJSON('api/Devices', function (data) {
         $.each(data, function (i) {
             $.each(data.data, function (j) {
-                deviceCoordinates += '&markers=label:' + data[i][j].id + '%7C' + data[i][j].latitude + ',' + data[i][j].longitude;
+                switch (data[i][j].status)
+                {
+                    case "light":
+                        icon = light;
+                        break;
+                    case "medium":
+                        icon = medium;
+                        break;
+                    case "heavy":
+                        icon = heavy;
+                        break;
+                }
+                deviceCoordinates += '&markers=icon:' + icon + '%7C' + 'size:tiny%7C' + data[i][j].latitude + ',' + data[i][j].longitude;
             });
         });
 
+    //Color implementation
+    //$.getJSON('api/Devices', function (data) {
+    //    $.each(data, function (i) {
+    //        $.each(data.data, function (j) {
+    //            switch (data[i][j].status)
+    //            {
+    //                case "light":
+    //                    //icon = "icon:" + light;
+    //                    color = "color:green%7Clabel:L";
+    //                    break;
+    //                case "medium":
+    //                    //icon = "icon:" + medium;
+    //                    color = "color:yellow%7Clabel:M";
+    //                    break;
+    //                case "heavy":
+    //                    //icon = "icon:" + heavy;
+    //                    color = "color:red%7Clabel:H";
+    //                    break;
+    //            }
+    //            deviceCoordinates += '&markers=' + color + '%7C' + data[i][j].latitude + ',' + data[i][j].longitude;
+    //        });
+    //    });
+        
         var imgUrl = baseUrl + deviceCoordinates + apiKey;
         $('#staticMap').attr("src", imgUrl);
     });

@@ -22,7 +22,7 @@ namespace TmsDemo.Test
             d2.Latitude = "new lat";
             d2.Longitude = "";
 
-            Device d3 = new Device(1, "lat", "long", 10, 12);
+            Device d3 = new Device(1, "lat", "long", 10, 12, "light");
             d3.Duration = 55;
             d3.Id = 23;
 
