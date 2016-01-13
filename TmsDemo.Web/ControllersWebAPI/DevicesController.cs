@@ -20,7 +20,13 @@ namespace TmsDemo.Web.ControllersWebAPI
            new Device(6, "42.367215", "-71.185110", 45,782, "light"),
            new Device(7, "42.366207", "-71.188701", 10, 12, "medium"),
            new Device(8, "42.365934", "-71.182985", 30, 48, "medium"),
-           new Device(9, "42.366307", "-71.183886", 45,782, "medium")
+           new Device(9, "42.366307", "-71.183886", 45,782, "medium"),
+           new Device(10, "42.367101", "-71.182961", 30, 48, "heavy"),
+           new Device(11, "42.367533", "-71.187737", 30, 48, "light"),
+           new Device(12, "42.366101", "-71.187332", 30, 48, "heavy"),
+           new Device(13, "42.366071", "-71.187161", 30, 48, "heavy"),
+           new Device(14, "42.363998", "-71.189162", 30, 48, "light"),
+           new Device(15, "42.363805", "-71.182907", 30, 48, "light")        
        };
         
     // GET: api/Devices
