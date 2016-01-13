@@ -10,8 +10,19 @@ namespace TmsDemo.Web.ControllersWebAPI
 {
     public class DevicesController : ApiController
     {
-       private readonly Device[] _deviceList =  new Device[] { new Device(1, "42.366096", "-71.185290", 10, 12), new Device(2, "42.365533", "-71.184804", 30, 48), new Device(3, "42.365212", "-71.184292", 45,782) };
-
+       private readonly Device[] _deviceList =  new Device[] 
+       {
+           new Device(1, "42.365858", "-71.185265", 10, 12),
+           new Device(2, "42.366840", "-71.186621", 30, 48),
+           new Device(3, "42.365212", "-71.184292", 45,782),
+           new Device(4, "42.364443", "-71.185869", 10, 12),
+           new Device(5, "42.363298", "-71.186099", 30, 48),
+           new Device(6, "42.367215", "-71.185110", 45,782),
+           new Device(7, "42.366207", "-71.188701", 10, 12),
+           new Device(8, "42.365934", "-71.182985", 30, 48),
+           new Device(9, "42.366307", "-71.183886", 45,782)
+       };
+        
     // GET: api/Devices
     public Object Get()
         {

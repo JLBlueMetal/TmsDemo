@@ -9,14 +9,14 @@
 <script>
 $(document).ready(function(){
 
-    var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=9+Galen+St,Watertown,MA&zoom=16&size=800x800";
+    var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=9+Galen+St,Watertown,MA&zoom=16&size=400x400&scale=2";
     var apiKey = "&key=AIzaSyDFT2vE9vv6Jl_4zG69vghiVnq8T4r6fxY";
     var deviceCoordinates = "";
     
     $.getJSON('api/Devices', function (data) {
         $.each(data, function (i) {
             $.each(data.data, function (j) {
-                deviceCoordinates += '&markers=' + data[i][j].latitude + ',' + data[i][j].longitude;
+                deviceCoordinates += '&markers=label:' + data[i][j].id + '%7C' + data[i][j].latitude + ',' + data[i][j].longitude;
             });
         });
 

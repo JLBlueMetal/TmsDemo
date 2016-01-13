@@ -5,13 +5,13 @@ using TmsDemo.Data.Entities;
 namespace TmsDemo.Test
 {
     [TestClass]
-    public class DeviceTest
+    public class TmsDemoTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Device_Class_Test()
         {
             Device d1 = new Device();
-           
+
             d1.Id = 4;
             d1.Latitude = "89";
             d1.Longitude = "89";
